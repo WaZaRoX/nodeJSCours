@@ -1,0 +1,18 @@
+
+extends layout
+
+block content
+  div
+    h2 Edit user
+    form(method='POST' action='/users/edit')
+      div(class='form-group')
+        label(for='firstName') firstName:
+        input(type='text', value=user.firstName name='firstName' class='form-control')
+      div(class='form-group')
+        label(for='lastName') lastName:
+        input(type='text', value=user.lastName name='lastName' class='form-control')
+      div(class='form-group')
+        label(for='age') age:
+        input(type='text', value=user.age name='age' class='form-control')
+      input(type="hidden" value=user._id name='id')
+      button(class="btn btn-primary", type="submit", name="action") Enregistrer
